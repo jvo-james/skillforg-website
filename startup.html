@@ -175,19 +175,7 @@
             transform: scale(1.05);
         }
 
-        /* Testimonials */
-        .testimonial {
-            text-align: center;
-            padding: 30px;
-            font-size: 1.2rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-        }
-
-        /* FAQ */
-        .faq {
-            text-align: left;
-        }
+      
 
         /* Footer */
         .footer {
@@ -351,13 +339,32 @@ color: white;
     transform: scale(1.05);
 }
 
-.testimonial {
- text-align: center;
-    padding: 40px;
-    background: #333;
-    color: white;
-   border-radius: 0px;
+.testimonials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+        background: #333;
+
 }
+
+.testimonial {
+    color: #ffffff;
+    text-align: center;
+}
+
+.testimonial p {
+    font-size: 16px;
+    color: #333;
+}
+
+.testimonial h3 {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #ff9800;
+}
+
 sectiont {  padding: 80px 15%;
             text-align: center;
         }
@@ -614,14 +621,23 @@ sectiont {  padding: 80px 15%;
         </div>
     </section>
 <br>
-    <!-- Testimonials --> <section class="sectiontestimonials">  <center>
+    <!-- Testimonials -->
+<section class="testimonials">      <center>  <h1>What Students Say</h1>
 
     <div class="testimonial">
-        <h2>What Students Say</h2>
-        <div class="testimonial">"SkillForg changed my career!" - Alex</divv>
-        <span class="testimonial">"Amazing workshops, highly recommended!" - Sarah</span>
-    </div></center>
+        <p>"This workshop was a game-changer! I learned so much and felt supported the entire time."</p>
+        <h3>- Mariah</h3>
+    </div>
+    <div class="testimonial">
+        <p>"The instructors were amazing, and the hands-on projects really helped me understand the concepts."</p>
+        <h3>- Alexander</h3>
+    </div>
+    <!-- Repeat testimonial blocks as needed -->
 </section>
+
+
+<br>
+
 <br>
     <!-- FAQ --><section class="sectionfaq"><center>
     <div class="sectiont">
