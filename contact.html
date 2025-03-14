@@ -181,6 +181,43 @@ body {
         width: 100%;
     }
 }
+    /* Pop-up Styles */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.popup-content button {
+    background: #ff9800;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.popup-content button:hover {
+    background: #e68900;
+}
+
 </style>
 </head>
 <body>
@@ -218,6 +255,13 @@ body {
     <input type="hidden" name="_captcha" value="false"> <!-- Disable Captcha -->
                 <button type="submit">Send Message</button>
             </form>
+            <!-- Pop-up Modal -->
+<div id="popupMessage" class="popup">
+    <div class="popup-content">
+        <p>✅ Your message has been submitted successfully!</p>
+        <button onclick="closePopup()">OK</button>
+    </div>
+</div>
         </div>
     </section>
 
@@ -225,7 +269,7 @@ body {
     <section class="contact-map">
         <h2>📍 Find Us on Google Maps</h2>
         <iframe
-            src="https://goo.gl/maps/xAG9GfjzsuLqzv9X9"
+            src="https://www.google.com.gh/maps/@9.7466735,-0.9011178,8z?entry=ttu&g_ep=EgoyMDI1MDMxMS4wIKXMDSoASAFQAw%3D%3D"
             width="100%"
             height="400"
             style="border:0;"
@@ -247,6 +291,36 @@ body {
             <a href="#"><i class="fab fa-linkedin-in"></i></a>
         </div>
     </section>
+<script>
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent default form submission
+        
+        // Send form data to FormSubmit
+        fetch(event.target.action, {
+            method: "POST",
+            body: new FormData(event.target),
+        })
+        .then(response => {
+            if (response.ok) {
+                // Show success pop-up
+                document.getElementById("popupMessage").style.display = "block";
+
+                // Reset form fields
+                event.target.reset();
+            } else {
+                alert("❌ Error submitting message. Please try again.");
+            }
+        })
+        .catch(error => {
+            console.error("Error:", error);
+            alert("❌ Something went wrong.");
+        });
+    });
+
+    function closePopup() {
+        document.getElementById("popupMessage").style.display = "none";
+    }
+</script>
 
 </body>
 </html>
