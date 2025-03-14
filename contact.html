@@ -247,7 +247,7 @@
             <p>Saturday: <b>10:00 AM – 4:00 PM</b></p>
             <p>Sunday: <b>Closed</b></p>
         </div>
-
+<br><br>
         <div class="contact-form">
             <h2>💬 Send Us a Message</h2>
             <!-- Add an id "contactForm" to the form for JavaScript targeting -->
@@ -306,19 +306,7 @@
     </section>
 
  
-      <form id="contactForm" action="https://formsubmit.co/jamesdeledemsenu23@gmail.com" method="POST">
-    <input type="hidden" name="_subject" value="New Contact Form Message!">
-    <!-- Remove or leave _next empty since we'll reload via JavaScript -->
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_autoresponse" value="Thank you for contacting us! Your message has been received. We will get back to you within 24 hours.">
-    
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-    
-    <button type="submit">Send Message</button>
-</form>
-
+     
 <script>
 document.getElementById("contactForm").addEventListener("submit", function(event) {
     event.preventDefault(); // Prevent default form submission
