@@ -146,17 +146,51 @@
         .social-icons a:hover {
             transform: scale(1.2);
         }
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .contact-container {
-                flex-direction: column;
-                padding: 20px;
-            }
-            .contact-info,
-            .contact-form {
-                width: 100%;
-            }
-        }
+      @media (max-width: 480px) {
+    body {
+        font-size: 18px;
+    }
+    .container {
+        max-width: 95%;
+        margin: 20px auto;
+        padding: 20px;
+    }
+    .contact-header h1 {
+        font-size: 28px;
+    }
+    .contact-header p {
+        font-size: 16px;
+    }
+    .contact-info, .contact-form {
+        padding: 15px;
+    }
+    .contact-info h2, .contact-form h2 {
+        font-size: 20px;
+    }
+    .contact-info p,
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form button {
+        font-size: 16px;
+    }
+    .cta-button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+    /* Adjust navigation if needed */
+    .navbar {
+        flex-direction: column;
+        padding: 10px;
+    }
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+    }
+    .nav-links li {
+        margin: 5px 0;
+    }
+}
+
         /* Pop-up Styles */
         .popup {
             display: none !important;
