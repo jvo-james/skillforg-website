@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Student Workshops</title>
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+<style>/* General Styling */
+body {
+    font-family: 'Raleway', sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* About Container */
+.about-container {
+    max-width: 900px;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+/* Header Section */
+.about-header h1 {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.about-header p {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+/* Sections */
+.about-section {
+    margin: 40px 0;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+}
+
+.about-section h2 {
+    font-size: 28px;
+    color: #ffeb3b;
+}
+
+.about-section p {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+/* Workshop List */
+.workshop-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.workshop-item {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.workshop-item:hover {
+    background: rgba(255, 255, 255, 0.5);
+    transform: scale(1.05);
+}
+
+/* Benefits List */
+.benefits-list {
+    list-style: none;
+    padding: 0;
+    font-size: 18px;
+}
+
+.benefits-list li {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.benefits-list i {
+    color: #ffeb3b;
+}
+
+/* Call to Action */
+.cta-section {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.cta-section h2 {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.cta-section p {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 25px;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    background: #ff9800;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #e68900;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-container {
+        width: 90%;
+        padding: 20px;
+    }
+    
+    .workshop-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .workshop-item {
+        width: 100%;
+        text-align: center;
+    }
+}
+</style>
+</head>
+<body>
+
+    <div class="about-container">
+        <div class="about-header">
+            <h1>About Us</h1>
+            <p>Welcome to Skillforg, the ultimate destination for students eager to expand their skills and gain hands-on experience in various fields. Our mission is to bridge the gap between theoretical learning and real-world application, empowering students to excel in today's competitive landscape.</p>
+        </div>
+
+        <div class="about-content">
+            <section class="about-section">
+                <h2><i class="fa fa-users"></i> Who We Are</h2>
+                <p>We are a dynamic and interactive learning platform designed to connect students with industry experts through engaging workshops. Whether you're a beginner or an advanced learner, our workshops cater to all skill levels, helping you enhance your knowledge, build confidence, and develop practical expertise.</p>
+            </section>
+
+            <section class="about-section">
+                <h2><i class="fa fa-graduation-cap"></i> Our Workshops</h2>
+                <div class="workshop-list">
+                    <div class="workshop-item"><i class="fa fa-code"></i> <b>Web Development</b> </div>
+                    <div class="workshop-item"><i class="fa fa-paint-brush"></i> <b>Graphic Design </b></div>
+                    <div class="workshop-item"><i class="fa fa-bullhorn"></i> <b>Marketing Strategies</b></div>
+                    <div class="workshop-item"><i class="fa fa-chart-line"></i> <b>Digital Marketing</b></div>
+                    <div class="workshop-item"><i class="fa fa-camera"></i> <b>Photography</b></div>
+                    <div class="workshop-item"><i class="fa fa-robot"></i> <b>Robotics</b></div>
+                    <div class="workshop-item"><i class="fa fa-database"></i> <b>Data Science</b></div>
+                </div>
+            </section>
+
+            <section class="about-section">
+                <h2><i class="fa fa-star"></i> Why Choose Us?</h2>
+                <ul class="benefits-list">
+                    <li><i class="fa fa-check-circle"></i> Expert-led training from professionals</li>
+                    <li><i class="fa fa-check-circle"></i> Hands-on projects & real-world case studies</li>
+                    <li><i class="fa fa-check-circle"></i> Certificates upon completion</li>
+                    <li><i class="fa fa-check-circle"></i> Networking opportunities with mentors</li>
+                    <li><i class="fa fa-check-circle"></i> Flexible learning: Online & In-person</li>
+                </ul>
+            </section>
+        </div>
+            <a href="startup.html" class="cta-button">Home</a>
+
+        <div class="cta-section">
+            <h2>Join Us Today!</h2>
+            <p>Take the next step in your career by enrolling in one of our exciting workshops.</p>
+            <a href="registration.html" class="cta-button">Register Now</a>
+        </div>
+    </div>
+
+</body>
+</html>
