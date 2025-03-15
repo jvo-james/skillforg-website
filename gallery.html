@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <title>Workshop Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+<style>
+/* General Styles */
+body {
+    font-family: 'Raleway', sans-serif;
+
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #333);
+    color: #fff;
+}
+
+/* Header */
+h1 {
+    font-size: 3em;
+    margin: 20px 0;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    font-size: 2.2em;
+    margin-bottom: 15px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+/* Gallery Container */
+.gallery-container {
+    width: 90%;
+    margin: auto;
+    padding-bottom: 50px;
+}
+
+.gallery {
+   display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Forces exactly 2 images per row */
+    grid-template-rows: repeat(3, auto); /* 3 rows for a 2x3 matrix */
+    gap: 15px; /* Adjusted spacing */
+    padding: 30px 10%;
+    justify-content: center;
+}
+
+.gallery-category {
+        position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+}
+
+.gallery-category img {
+   width: 100%;
+    height: 350px; /* Set fixed height for uniformity */
+    object-fit: cover;
+    display: block;
+    transition: transform 0.2s ease-in-out;
+
+}
+
+.gallery-category:hover img {
+    transform: scale(1.1);
+}
+
+/* Overlay Effect */
+.overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.gallery-item:hover .overlay {
+    background: rgba(0, 0, 0, 0.8);
+}
+/* Header Section */
+.gallery-header {
+    background: linear-gradient(to right, #ff9966, #ff5e62);
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-header h1 {
+    font-size: 36px;
+    margin: 0;
+letter-spacing: 2px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+
+}
+
+.gallery-header p {
+    font-size: 18px;
+margin-top: 8px;
+}
+
+
+.gallery img:hover {
+    transform: scale(1.15);
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.4);
+    filter: brightness(1.1);
+}
+
+/* Lightbox Overlay */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+        justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Lightbox Image */
+.lightbox img {
+    width: 800px;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
+    transition: transform 0.3s ease-in-out;
+}
+
+.lightbox img:hover {
+    transform: scale(1.05);
+}
+
+/* Lightbox Controls */
+.close, .prev, .next {
+    position: absolute;
+    font-size: 2.5em;
+    color: white;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 50%;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.close {
+    top: 20px;
+    right: 40px;
+}
+
+.prev {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
+}
+
+.close:hover, .prev:hover, .next:hover {
+    background: rgba(255, 255, 255, 0.5);
+    transform: scale(1.1);
+}
+ 
+.cta-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 25px;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    background: #ff9800;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #e68900;
+    transform: scale(1.05);
+}
+
+
+</style>
+</head>
+<body>
+
+    <div class="gallery-container">
+ <section class="gallery-header">
+        <h1>Workshop Gallery</h1>
+        <p>Explore photos from our interactive and exciting workshops!</p>
+    </section>        
+            <div class="gallery">
+
+        <!-- Web Development -->
+        <div class="gallery-category" data-category="web">
+                <img src="web5.jpeg" alt="Web Dev 1" onclick="openLightbox('web', 0)">
+<div class="overlay"><span>Web Development</span></div>
+                 
+        </div>
+
+        <!-- Graphic Design -->
+        <div class="gallery-category" data-category="graphic">
+                <img src="graphic4.jpg" alt="Graphic Design 1" onclick="openLightbox('graphic', 0)">
+ <div class="overlay"><span>Graphic Design</span></div>
+                                    </div>
+
+        <!-- Marketing Strategies -->
+        <div class="gallery-category" data-category="marketing">
+                <img src="strategy5.jpg" alt="Marketing 1" onclick="openLightbox('marketing', 0)"> <div class="overlay"><span>Marketing Strategies</span></div>
+                       </div>
+
+        <!-- Digital Marketing -->
+        <div class="gallery-category" data-category="digital">
+                <img src="digital5.jpg" alt="Digital Marketing 1" onclick="openLightbox('digital', 0)">
+                 <div class="overlay"><span>Digital Marketing</span></div>  </div>
+       
+
+        <!-- Photography -->
+        <div class="gallery-category" data-category="photography">
+                <img src="photo3.jpg" alt="Photography 1" onclick="openLightbox('photography', 0)">
+                 <div class="overlay"><span>Photography</span></div>
+                    </div>
+
+        <!-- Robotics -->
+        <div class="gallery-category" data-category="robotics">
+                <img src="robot4.jpg" alt="Robotics 1" onclick="openLightbox('robotics', 0)">
+              <div class="overlay"><span>Robotics</span></div>  </div>
+        
+
+        <!-- Data Science -->
+        <div class="gallery-category" data-category="data">
+                <img src="data4.jpg" alt="Data Science 1" onclick="openLightbox('data', 0)">
+               <div class="overlay"><span>Data Science</span></div>
+
+            </div>
+
+ </div>
+ <a href="startup.html" class="cta-button">Home</a>            <a href="registration.html" class="cta-button">Register Now</a>
+
+    </div>
+
+    <!-- Lightbox for Image Slideshow -->
+    <div id="lightbox" class="lightbox">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <img id="lightboxImage" src="" alt="">
+        <button class="prev" onclick="prevImage()">&#10094;</button>
+        <button class="next" onclick="nextImage()">&#10095;</button>
+    </div>
+
+</body>
+<script>
+let currentCategory = "";
+let currentIndex = 0;
+const images = {
+    web: ["web.jpg", "web2.jpg", "web3.jpeg", "web4.webp", "web5.jpeg", "web6.jpeg"],
+    graphic: ["graphic1.jpg", "graphic2.webp", "graphic3.webp", "graphic4.jpg", "graphic5.webp", "graphic6.webp"],
+    marketing: ["strategy1.jpg", "strategy2.webp", "strategy3.jpeg", "strategy4.jpg", "strategy5.jpg", "strategy6.jpeg"],
+    digital: ["digital1.webp", "digital2.jpg", "digital3.png", "digital4.jpg", "digital5.jpg"],
+    photography: ["photo1.jpeg", "photo2.webp", "photo3.jpg", "photo4.jpg", "photo5.jpg", "photo6.avif"],
+    robotics: ["robot1.webp", "robot2.jpg", "robot3.jpg", "robot3.jpg", "robot4.jpg", "robot5.avif"],
+    data: ["data1.jpg", "data2.jpg", "data3.webp", "data4.jpg", "data5.webp", "data6.jpeg"]
+};
+
+function openLightbox(category, index) {
+    currentCategory = category;
+    currentIndex = index;
+    document.getElementById("lightbox").style.display = "flex";
+    updateImage();
+}
+
+function updateImage() {
+    document.getElementById("lightboxImage").src = images[currentCategory][currentIndex];
+}
+
+function prevImage() { currentIndex = (currentIndex > 0) ? currentIndex - 1 : images[currentCategory].length - 1; updateImage(); }
+function nextImage() { currentIndex = (currentIndex < images[currentCategory].length - 1) ? currentIndex + 1 : 0; updateImage(); }
+function closeLightbox() { document.getElementById("lightbox").style.display = "none"; }
+</script>
+</html>
