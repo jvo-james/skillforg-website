@@ -112,17 +112,7 @@
       font-size: 1.1em;
       line-height: 1.5;
     }
-    /* Footer */
-    footer {
-      background: #222;
-      padding: 20px;
-      text-align: center;
-      font-size: 1em;
-      margin-top: 50px;
-    }
-    footer p {
-      color: #ccc;
-    }
+   
     /* Animations */
     @keyframes fadeInDown {
       from { opacity: 0; transform: translateY(-50px); }
@@ -132,6 +122,45 @@
       from { opacity: 0; }
       to { opacity: 1; }
     }
+.cta-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 25px;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    background: #ff9800;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #e68900;
+    transform: scale(1.05);
+}
+
+    /* Footer Styles */
+.footer {
+            color: #ccc;
+            background: #222;
+      padding: 20px;
+      text-align: center;
+      font-size: 1em;
+      margin-top: 50px;
+        }
+
+
+.footer a {
+    color: #ff9800; /* Highlight color */
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer a:hover {
+    color: #e68900; /* Darker shade on hover */
+}
     /* Responsive Design */
     @media (max-width: 600px) {
       .hero h1 {
@@ -217,11 +246,18 @@
         </div>
       </div>
     </section>
-    
+    <a href="https://jvo-james.github.io/skillforg-website/startup.html" class="cta-button">Home</a>
     <!-- Footer -->
-    <footer>
-      <p>&copy; 2025 SkillForge. All Rights Reserved.</p>
-    </footer>
+     <div class="footer">
+        <p>&copy; 2025 SkillForg. All rights reserved.</p>
+	     <p>
+        <a href="https://jvo-james.github.io/skillforg-website/privacy.html">Privacy Policy</a> | 
+        <a href="https://jvo-james.github.io/skillforg-website/terms.html">Terms of Use</a>  
+       
+    </p>
+    </div>
+
+   
   </div>
 </body>
 </html>
