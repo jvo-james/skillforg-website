@@ -146,49 +146,103 @@
         .social-icons a:hover {
             transform: scale(1.2);
         }
-      @media (max-width: 480px) {
-    body {
-        font-size: 18px;
-    }
-    .container {
-        max-width: 95%;
-        margin: 20px auto;
-        padding: 20px;
-    }
-    .contact-header h1 {
-        font-size: 28px;
-    }
-    .contact-header p {
-        font-size: 16px;
-    }
-    .contact-info, .contact-form {
-        padding: 15px;
-    }
-    .contact-info h2, .contact-form h2 {
-        font-size: 20px;
-    }
-    .contact-info p,
-    .contact-form input,
-    .contact-form textarea,
-    .contact-form button {
-        font-size: 16px;
-    }
-    .cta-button {
-        font-size: 16px;
-        padding: 10px 20px;
-    }
-    /* Adjust navigation if needed */
-    .navbar {
-        flex-direction: column;
-        padding: 10px;
-    }
-    .nav-links {
-        flex-direction: column;
-        width: 100%;
-    }
-    .nav-links li {
-        margin: 5px 0;
-    }
+
+        @media (max-width: 480px) {
+  /* Header adjustments */
+  .contact-header {
+    padding: 20px 10px;
+  }
+  .contact-header h1 {
+    font-size: 28px;
+  }
+  .contact-header p {
+    font-size: 16px;
+  }
+  
+  /* Container adjustments */
+  .contact-container {
+    flex-direction: column;
+    padding: 20px 5%;
+    gap: 20px;
+  }
+  
+  /* Contact Info Box */
+  .contact-info {
+    width: 100%;
+    padding: 20px;
+  }
+  .contact-info h2 {
+    font-size: 20px;
+  }
+  .contact-info p {
+    font-size: 16px;
+    margin: 8px 0;
+  }
+  .contact-info i {
+    font-size: 16px;
+    margin-right: 8px;
+  }
+  
+  /* Contact Form Box */
+  .contact-form {
+    width: 100%;
+    padding: 20px;
+  }
+  .contact-form h2 {
+    font-size: 20px;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 16px;
+    padding: 10px;
+    margin: 8px 0;
+  }
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    border-color: #4facfe;
+  }
+  .contact-form button {
+    font-size: 18px;
+    padding: 12px;
+  }
+  .contact-form button:hover {
+    background: #00c3ff;
+  }
+  
+  /* Google Maps Section */
+  .contact-map {
+    padding: 20px;
+  }
+  .contact-map h2 {
+    font-size: 22px;
+  }
+  .contact-map iframe {
+    height: 300px;
+  }
+  
+  /* Call-to-Action Button */
+  .cta-button {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+  .cta-button:hover {
+    background: #e68900;
+  }
+  
+  /* Social Media Section */
+  .contact-socials {
+    padding: 20px;
+  }
+  .contact-socials h2 {
+    font-size: 22px;
+  }
+  .social-icons a {
+    font-size: 20px;
+    margin: 0 5px;
+  }
+  .social-icons a:hover {
+    transform: scale(1.1);
+  }
 }
 
         /* Pop-up Styles */
@@ -247,7 +301,7 @@
             <p>Saturday: <b>10:00 AM – 4:00 PM</b></p>
             <p>Sunday: <b>Closed</b></p>
         </div>
-<br><br>
+
         <div class="contact-form">
             <h2>💬 Send Us a Message</h2>
             <!-- Add an id "contactForm" to the form for JavaScript targeting -->
