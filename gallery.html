@@ -200,6 +200,35 @@ margin-top: 8px;
     transform: scale(1.05);
 }
 
+@media (max-width: 480px) {
+  /* Adjust the gallery grid layout */
+  .gallery {
+      grid-template-columns: repeat(2, 1fr);  /* 2 columns per row */
+      gap: 10px;
+      padding: 20px 5%;
+  }
+  
+  /* Adjust image size for smaller screens */
+  .gallery-category img {
+      height: 200px;       /* smaller height for mobile */
+      object-fit: cover;   /* keep image aspect ratio */
+  }
+  
+  /* Optionally, adjust overlay text */
+  .overlay {
+      font-size: 16px;
+      padding: 8px;
+  }
+  
+  /* Adjust header fonts if necessary */
+  .gallery-header h1 {
+      font-size: 28px;
+  }
+  
+  .gallery-header p {
+      font-size: 16px;
+  }
+}
 
 </style>
 </head>
