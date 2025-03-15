@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to SkillForge</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    /* Reset & Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Raleway', sans-serif;
+      background: url('primal.jpg') no-repeat center center/cover; /* Replace with your background image */
+      position: relative;
+      color: white;
+      overflow-x: hidden;
+    }
+    /* Dark overlay on background */
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 1;
+    }
+    /* Main Content Container */
+    .content {
+      position: relative;
+      z-index: 2;
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+    /* Hero Section */
+    .hero {
+      padding: 100px 20px 50px;
+      animation: fadeInDown 1s ease;
+    }
+    .hero h1 {
+      font-size: 3.5em;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+    }
+    .hero p {
+      font-size: 1.5em;
+      margin-bottom: 40px;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+    }
+    .btn-register {
+      background: #ffcc00;
+      color: black;
+      padding: 16px 32px;
+      font-size: 1.3em;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      display: inline-block;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    .btn-register:hover {
+      background: #ffb300;
+      transform: scale(1.05);
+    }
+    /* Workshops Section */
+    .workshops {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 50px 20px;
+      margin-top: 50px;
+    }
+    .workshops h2 {
+      font-size: 2.8em;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    }
+    .workshop-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .workshop-item {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .workshop-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    }
+    .workshop-item i {
+      font-size: 3em;
+      margin-bottom: 15px;
+      color: #ffcc00;
+    }
+    .workshop-item h3 {
+      font-size: 1.8em;
+      margin-bottom: 10px;
+    }
+    .workshop-item p {
+      font-size: 1.1em;
+      line-height: 1.5;
+    }
+    /* Footer */
+    footer {
+      background: #222;
+      padding: 20px;
+      text-align: center;
+      font-size: 1em;
+      margin-top: 50px;
+    }
+    footer p {
+      color: #ccc;
+    }
+    /* Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2.5em;
+      }
+      .hero p {
+        font-size: 1.2em;
+      }
+      .btn-register {
+        padding: 12px 24px;
+        font-size: 1em;
+      }
+      .workshops h2 {
+        font-size: 2em;
+      }
+      .workshop-item i {
+        font-size: 2.5em;
+      }
+      .workshop-item h3 {
+        font-size: 1.5em;
+      }
+      .workshop-item p {
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+  <div class="content">
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1>Welcome to SkillForge</h1>
+      <p>Embark on a transformative journey with our cutting-edge workshops and expert guidance.</p>
+      <a href="registration.html" class="btn-register">Register Now</a>
+    </section>
+    
+    <!-- Workshops Information Section -->
+    <section class="workshops">
+      <h2>Discover Our Workshops</h2>
+      <div class="workshop-grid">
+        <!-- Web Development -->
+        <div class="workshop-item">
+          <i class="fas fa-code"></i>
+          <h3>Web Development</h3>
+          <p>Learn to build modern, responsive websites and web applications using HTML, CSS, JavaScript, and more.</p>
+        </div>
+        <!-- Graphic Design -->
+        <div class="workshop-item">
+          <i class="fas fa-palette"></i>
+          <h3>Graphic Design</h3>
+          <p>Unleash your creativity with design principles and software that bring your ideas to life.</p>
+        </div>
+        <!-- Marketing Strategies -->
+        <div class="workshop-item">
+          <i class="fas fa-chart-line"></i>
+          <h3>Marketing Strategies</h3>
+          <p>Master effective strategies to promote products, services, and build your brand.</p>
+        </div>
+        <!-- Digital Marketing -->
+        <div class="workshop-item">
+          <i class="fas fa-bullhorn"></i>
+          <h3>Digital Marketing</h3>
+          <p>Explore online marketing techniques and social media tactics to expand your digital footprint.</p>
+        </div>
+        <!-- Photography -->
+        <div class="workshop-item">
+          <i class="fas fa-camera"></i>
+          <h3>Photography</h3>
+          <p>Capture stunning visuals and learn professional photography techniques to tell your story.</p>
+        </div>
+        <!-- Robotics -->
+        <div class="workshop-item">
+          <i class="fas fa-robot"></i>
+          <h3>Robotics</h3>
+          <p>Dive into the world of robotics and automation with hands-on projects and real-world applications.</p>
+        </div>
+        <!-- Data Science -->
+        <div class="workshop-item">
+          <i class="fas fa-database"></i>
+          <h3>Data Science</h3>
+          <p>Unlock insights from data through analysis, machine learning, and visualization techniques.</p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 SkillForge. All Rights Reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>
