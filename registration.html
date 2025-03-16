@@ -959,6 +959,79 @@ button:hover {
 
    
     updateProgress();
+		document.addEventListener("DOMContentLoaded", function () {
+    const steps = document.querySelectorAll(".form-step");
+    const progressSteps = document.querySelectorAll(".progress-bar .step");
+    const nextButtons = document.querySelectorAll(".next");
+    const prevButtons = document.querySelectorAll(".prev");
+
+    let currentStep = 0;
+
+    // Function to update progress bar
+    function updateProgress() {
+        progressSteps.forEach((step, index) => {
+            if (index <= currentStep) {
+                step.classList.add("active");
+            } else {
+                step.classList.remove("active");
+            }
+        });
+    }
+
+    // Function to scroll to the top smoothly
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    // Function to validate required fields
+    function validateStep(stepIndex) {
+        const inputs = steps[stepIndex].querySelectorAll("input[required], select[required]");
+        let isValid = true;
+
+        inputs.forEach(input => {
+            if (!input.value.trim()) {
+                input.classList.add("error");
+                isValid = false;
+            } else {
+                input.classList.remove("error");
+            }
+        });
+
+        if (!isValid) {
+            alert("Please fill in all required fields before proceeding.");
+        }
+
+        return isValid;
+    }
+
+    // Next Button Event
+    nextButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            if (!validateStep(currentStep)) return;
+
+            steps[currentStep].classList.remove("active");
+            currentStep++;
+            steps[currentStep].classList.add("active");
+            updateProgress();
+            scrollToTop(); // Scroll to the top when moving to the next step
+        });
+    });
+
+    // Previous Button Event
+    prevButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            steps[currentStep].classList.remove("active");
+            currentStep--;
+            steps[currentStep].classList.add("active");
+            updateProgress();
+            scrollToTop(); // Scroll to the top when moving to the previous step
+        });
+    });
+
+    // Initialize Progress Bar
+    updateProgress();
+});
+
 });
 
 
