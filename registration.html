@@ -780,7 +780,7 @@ button:hover {
 
 
 	document.addEventListener("DOMContentLoaded", function () {
-    emailjs.init("mRkmngSQa0dzBfRS8"); // Initialize EmailJS
+    emailjs.init("mRkmngSQa0dzBfRS8"); 
 
     const steps = document.querySelectorAll(".form-step");
     const progressSteps = document.querySelectorAll(".progress-bar .step");
@@ -792,19 +792,19 @@ button:hover {
 
     let currentStep = 0;
 
-    // Function to update progress bar
+    
     function updateProgress() {
         progressSteps.forEach((step, index) => {
             step.classList.toggle("active", index <= currentStep);
         });
     }
 
-    // Function to smoothly scroll to the top
+  
     function scrollToTop() {
         window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
-    // Function to validate required fields
+   
     function validateStep(stepIndex) {
         const inputs = steps[stepIndex].querySelectorAll("input[required], select[required]");
         let isValid = true;
@@ -872,7 +872,7 @@ button:hover {
         return isValid;
     }
 
-    // Show error message
+   
     function showError(input, message) {
         input.classList.add("error");
         input.nextElementSibling?.classList.contains("error-message")
@@ -880,7 +880,7 @@ button:hover {
             : createErrorMessage(input, message);
     }
 
-    // Remove error message
+   
     function removeError(input) {
         input.classList.remove("error");
         if (input.nextElementSibling?.classList.contains("error-message")) {
@@ -888,7 +888,7 @@ button:hover {
         }
     }
 
-    // Create error message below input field
+   
     function createErrorMessage(input, message) {
         const errorMsg = document.createElement("div");
         errorMsg.classList.add("error-message");
@@ -899,7 +899,7 @@ button:hover {
         input.parentNode.appendChild(errorMsg);
     }
 
-    // Next button event
+   
     nextButtons.forEach(button => {
         button.addEventListener("click", () => {
             if (!validateStep(currentStep)) return;
@@ -909,7 +909,7 @@ button:hover {
             steps[currentStep].classList.add("active");
 
             updateProgress();
-            scrollToTop(); // Scroll to the top when clicking "Next"
+            scrollToTop(); 
         });
     });
 
@@ -921,18 +921,18 @@ button:hover {
             steps[currentStep].classList.add("active");
 
             updateProgress();
-            scrollToTop(); // Scroll to the top when clicking "Back"
+            scrollToTop(); 
         });
     });
 
-    // Remove error on input change
+   
     document.querySelectorAll("input, select").forEach(input => {
         input.addEventListener("input", () => {
             removeError(input);
         });
     });
 
-    // Form submission
+ 
     form.addEventListener("submit", function (event) {
         event.preventDefault();
 
@@ -945,17 +945,17 @@ button:hover {
             return;
         }
 
-        // Get user details
+
         let userName = document.getElementById("firstName").value + " " + document.getElementById("lastName").value;
         let userEmail = document.getElementById("email").value;
 
-        // Send confirmation email
+       
         emailjs.send("service_cd8p711", "template_eg12xwg", {
             user_name: userName,
             user_email: userEmail
         }, "mRkmngSQa0dzBfRS8")
         .then(() => {
-            form.submit(); // Proceed with form submission
+            form.submit(); 
         })
         .catch((error) => {
             console.error("❌ EmailJS Error:", error);
@@ -963,7 +963,7 @@ button:hover {
         });
     });
 
-    // Initialize progress bar on page load
+    
     updateProgress();
 });
 
