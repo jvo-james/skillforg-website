@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
 <style>
-/* General Styles */
+
 body {
     font-family: 'Raleway', sans-serif;
 
@@ -21,7 +21,7 @@ body {
     color: #fff;
 }
 
-/* Header */
+
 h1 {
     font-size: 3em;
     margin: 20px 0;
@@ -39,7 +39,7 @@ h2 {
     display: inline-block;
 }
 
-/* Gallery Container */
+
 .gallery-container {
     width: 90%;
     margin: auto;
@@ -48,9 +48,9 @@ h2 {
 
 .gallery {
    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Forces exactly 2 images per row */
-    grid-template-rows: repeat(3, auto); /* 3 rows for a 2x3 matrix */
-    gap: 15px; /* Adjusted spacing */
+    grid-template-columns: repeat(2, 1fr); 
+    grid-template-rows: repeat(3, auto); 
+    gap: 15px; 
     padding: 30px 10%;
     justify-content: center;
 }
@@ -67,7 +67,7 @@ h2 {
 
 .gallery-category img {
    width: 100%;
-    height: 350px; /* Set fixed height for uniformity */
+    height: 350px; 
     object-fit: cover;
     display: block;
     transition: transform 0.2s ease-in-out;
@@ -78,7 +78,7 @@ h2 {
     transform: scale(1.1);
 }
 
-/* Overlay Effect */
+
 .overlay {
     position: absolute;
     bottom: 0;
@@ -95,7 +95,7 @@ h2 {
 .gallery-item:hover .overlay {
     background: rgba(0, 0, 0, 0.8);
 }
-/* Header Section */
+
 .gallery-header {
     background: linear-gradient(to right, #ff9966, #ff5e62);
     color: white;
@@ -124,7 +124,7 @@ margin-top: 8px;
     filter: brightness(1.1);
 }
 
-/* Lightbox Overlay */
+
 .lightbox {
     display: none;
     position: fixed;
@@ -138,7 +138,7 @@ margin-top: 8px;
     flex-direction: column;
 }
 
-/* Lightbox Image */
+
 .lightbox img {
     width: 800px;
     height: 600px;
@@ -152,7 +152,7 @@ margin-top: 8px;
     transform: scale(1.05);
 }
 
-/* Lightbox Controls */
+
 .close, .prev, .next {
     position: absolute;
     font-size: 2.5em;
@@ -199,9 +199,9 @@ margin-top: 8px;
     background: #e68900;
     transform: scale(1.05);
 }
-/* Footer Styles */
+
 .footer {
-    background: #222; /* Dark background */
+    background: #222; 
     color: white;
     text-align: center;
     padding: 15px 0;
@@ -212,37 +212,37 @@ margin-top: 8px;
 }
 
 .footer a {
-    color: #ff9800; /* Highlight color */
+    color: #ff9800;
     text-decoration: none;
     margin: 0 10px;
     transition: color 0.3s ease-in-out;
 }
 
 .footer a:hover {
-    color: #e68900; /* Darker shade on hover */
+    color: #e68900; 
 }
 
 @media (max-width: 480px) {
-  /* Adjust the gallery grid layout */
+  
   .gallery {
-      grid-template-columns: repeat(2, 1fr);  /* 2 columns per row */
+      grid-template-columns: repeat(2, 1fr); 
       gap: 10px;
       padding: 20px 5%;
   }
   
-  /* Adjust image size for smaller screens */
+
   .gallery-category img {
-      height: 200px;       /* smaller height for mobile */
-      object-fit: cover;   /* keep image aspect ratio */
+      height: 200px;       
+      object-fit: cover;  
   }
   
-  /* Optionally, adjust overlay text */
+  
   .overlay {
       font-size: 16px;
       padding: 8px;
   }
   
-  /* Adjust header fonts if necessary */
+ 
   .gallery-header h1 {
       font-size: 28px;
   }
@@ -267,43 +267,43 @@ margin-top: 8px;
     </section>        
             <div class="gallery">
 
-        <!-- Web Development -->
+       
         <div class="gallery-category" data-category="web">
                 <img src="web5.jpeg" alt="Web Dev 1" onclick="openLightbox('web', 0)">
 <div class="overlay"><span>Web Development</span></div>
                  
         </div>
 
-        <!-- Graphic Design -->
+       
         <div class="gallery-category" data-category="graphic">
                 <img src="graphic4.jpg" alt="Graphic Design 1" onclick="openLightbox('graphic', 0)">
  <div class="overlay"><span>Graphic Design</span></div>
                                     </div>
 
-        <!-- Marketing Strategies -->
+       
         <div class="gallery-category" data-category="marketing">
                 <img src="strategy5.jpg" alt="Marketing 1" onclick="openLightbox('marketing', 0)"> <div class="overlay"><span>Marketing Strategies</span></div>
                        </div>
 
-        <!-- Digital Marketing -->
+       
         <div class="gallery-category" data-category="digital">
                 <img src="digital5.jpg" alt="Digital Marketing 1" onclick="openLightbox('digital', 0)">
                  <div class="overlay"><span>Digital Marketing</span></div>  </div>
        
 
-        <!-- Photography -->
+        
         <div class="gallery-category" data-category="photography">
                 <img src="photo3.jpg" alt="Photography 1" onclick="openLightbox('photography', 0)">
                  <div class="overlay"><span>Photography</span></div>
                     </div>
 
-        <!-- Robotics -->
+       
         <div class="gallery-category" data-category="robotics">
                 <img src="robot4.jpg" alt="Robotics 1" onclick="openLightbox('robotics', 0)">
               <div class="overlay"><span>Robotics</span></div>  </div>
         
 
-        <!-- Data Science -->
+       
         <div class="gallery-category" data-category="data">
                 <img src="data4.jpg" alt="Data Science 1" onclick="openLightbox('data', 0)">
                <div class="overlay"><span>Data Science</span></div>
@@ -311,18 +311,18 @@ margin-top: 8px;
             </div>
 
  </div>
- <a href="https://jvo-james.github.io/skillforg-website/startup" class="cta-button">Home</a>            <a href="https://jvo-james.github.io/workshop-registration/registration.html" class="cta-button">Register Now</a>
+ <a href="https://jvo-james.github.io/skillforg-website/startup" class="cta-button">Home</a>            <a href="https://jvo-james.github.io/skillforg-website/registration.html" class="cta-button">Register Now</a>
 
     </div>
 
-    <!-- Lightbox for Image Slideshow -->
+   
     <div id="lightbox" class="lightbox">
         <span class="close" onclick="closeLightbox()">&times;</span>
         <img id="lightboxImage" src="" alt="">
         <button class="prev" onclick="prevImage()">&#10094;</button>
         <button class="next" onclick="nextImage()">&#10095;</button>
     </div>
-<!-- Footer Section -->
+
 <footer class="footer">
     <p>&copy; 2025 SkillForg. All Rights Reserved.</p>
     <p>
