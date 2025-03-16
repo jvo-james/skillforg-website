@@ -14,7 +14,7 @@
 
 
     <style>
-        /* General Styles */
+        
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -30,7 +30,7 @@
 
         }
 
-        /* Navbar */
+       
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -70,7 +70,7 @@
             color: #00c6ff;
         }
 
-        /* Main Content */
+      
         .container {
             flex: 1;
             display: flex;
@@ -101,7 +101,7 @@
             animation: bounce 1.5s infinite;
         }
 
-        /* Button */
+       
         .btn {
             margin-top: 20px;
             padding: 15px 30px;
@@ -119,7 +119,7 @@
             background: #0051cc;
         }
 
-        /* Footer */
+       
         footer {
            
             background: rgba(0, 0, 0, 0.8);
@@ -128,7 +128,7 @@
             font-size: 16px;
         }
 
-        /* Animations */
+       
         @keyframes bounce {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-10px); }
@@ -138,30 +138,56 @@
             from { opacity: 0; transform: translateY(-20px); }
             to { opacity: 1; transform: translateY(0); }
         }
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
+    .container {
+        width: 100%;
+        max-width: 350px; 
+        padding: 30px;
+    }
+
+    .container h1 {
+        font-size: 24px;
+    }
+
+    .container p {
+        font-size: 16px;
+    }
+
+    .container .btn {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
     </style>
 </head>
 <body>
 
-    <!-- Navigation Bar -->
+    
     <nav class="navbar">
         <div class="logo">Skillforg Workshop </div>
         <ul class="nav-links">
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="https://jvo-james.github.io/skillforg-website/about.html">About</a></li>
+            <li><a href="https://jvo-james.github.io/skillforg-website/contact.html">Contact</a></li>
         </ul>
     </nav>
 
-    <!-- Main Content -->
+    
     <div class="container">
         <i class="fas fa-check-circle success-icon"></i>
         <h1>Congratulations! 🎉</h1>
         <p>You have successfully registered for the workshop. We are excited to have you on board!</p>
         <p>Stay tuned for updates. Check your email for further details.</p>
-        <a href="startup.html" class="btn">Back to Home</a>
+        <a href="https://jvo-james.github.io/skillforg-website/startup.html" class="btn">Back to Home</a>
     </div>
 
-    <!-- Footer -->
+   
     <footer>
         &copy; 2025 Skillforg. All Rights Reserved.
     </footer>
