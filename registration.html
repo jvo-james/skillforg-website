@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <title>Workshop Registration</title>
+    <style>
+body {
+font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url('robot4.jpg');
+    background-size: cover;
+    background-position: center;
+    font-size: 25px;
+    color: white; /* Make all text white */
+    font-family: 'Raleway', sans-serif;
+
+}
+
+
+
+
+/* Navigation Bar */
+.navbar {
+display: flex;
+   position: fixed;
+    top: 0;
+    width: 95%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: rgba(0, 0, 0, 0.7);
+ z-index: 1000;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff9800;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff9800;
+}
+
+
+.container {
+    position: relative;
+    z-index: 1; /* Puts content above the overlay */
+    border: 2px solid white; /* Keeps the border only */
+  background: rgba(255, 255, 255, 0.1);    max-width: 50%;
+    margin:150px auto 50px; /* Keeps it centered but allows scrolling */
+    padding: 50px;
+    color: white;
+backdrop-filter: blur(10px);
+
+animation: fadeIn 1.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Title */
+.title {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #ff9800;
+}
+
+/* Progress Bar */
+.progress-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    counter-reset: step;
+}
+
+.step {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background: #555;
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+    transition: 0.3s;
+}
+@keyframes progressFill {
+    from {
+        background: #555;
+        transform: scale(0.8);
+    }
+    to {
+        background: #ff9800;
+        transform: scale(1);
+    }
+}
+
+.step.active {
+    background: #ff9800;
+	animation: progressFill 0.5s ease-in-out;
+
+}      
+	  h2 {
+            text-align: center;
+		font-family: Raleway;
+        }
+
+::placeholder {
+
+color: gray;
+  
+}
+
+input:focus::placeholder {
+  color: transparent; 
+}
+     input:focus, select:focus {
+    border-color: #ff9800;
+    box-shadow: 0px 0px 10px rgba(255, 152, 0, 0.7);
+    transition: 0.3s ease-in-out;
+}
+ @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+}
+
+.error {
+    border: 2px solid red !important;
+    animation: shake 0.3s ease-in-out;
+}
+
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            background: #6a11cb;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+		font-family: Raleway;
+		transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+}
+        }
+
+        button:hover {
+		transform: scale(1.05);
+    background:  #6a11cb;
+    box-shadow: 0px 0px 20px rgba(255, 152, 0, 0.7);
+        }
+button:active {
+    animation: bounce 0.3s ease-in-out;
+}
+
+@keyframes bounce {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+        .form-step {
+            display: none;
+		opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .form-step.active {
+            display: block;
+		opacity: 1;
+    transform: translateX(0);
+        }
+
+.terms-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.terms-container input[type="checkbox"] {
+    margin: 0;
+    width: 16px;
+    height: 16px;
+}
+
+.terms-container label {
+    margin-left: 5px;
+    font-size: 14px;
+    cursor: pointer;
+	font-family: Raleway;
+}
+/* 🌟 Input Group Styling */
+.input-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+/* 🌟 Icons Styling */
+.input-group i {
+    position: absolute;
+    left: 12px;
+    top: 40%;
+    transform: translateY(-50%);
+    color: #6a11cb;
+    font-size: 16px;
+	
+}
+
+/* 🌟 Input Fields */
+input[type=text]{
+    width: 85%;
+height: 30px;
+    padding: 10px 40px;
+    border-radius: 5px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #a2a2a2;
+font-family: Raleway;
+}
+input[type=date]{
+    width: 85%;
+height: 30px;
+    padding: 10px 40px;
+    border-radius: 5px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #a2a2a2;
+font-family: Raleway;
+}
+input[type=email]{
+    width: 85%;
+height: 30px;
+    padding: 10px 40px;
+    border-radius: 5px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #a2a2a2;
+font-family: Raleway;
+}
+
+/* 🌟 Focus Effect */
+.input-group input:focus {
+   padding-left: 50px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+
+    border-color: #ff9800;
+    box-shadow: 0px 0px 15px rgba(255, 152, 0, 0.7);
+}
+
+.input-group label {
+    position: absolute;
+    left: 15px;
+    top: 12px;
+    font-size: 16px;
+    color: #aaa;
+    transition: 0.3s ease-in-out;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+    top: -10px;
+    font-size: 12px;
+    color: #ff9800;
+}
+.input-group input {
+    padding: 10px 50px; 
+}
+
+/* Input Field Glow */
+input, textarea {
+    transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+.step.active {
+    background: #ff9800;
+    animation: progressGrow 0.5s ease-in-out;
+}
+
+@keyframes progressGrow {
+    0% {
+        background: #555;
+        transform: scale(0.8);
+    }
+    100% {
+        background: #ff9800;
+        transform: scale(1);
+    }
+} 
+
+
+
+.terms-container input[type="checkbox"] {
+    transition: all 0.2s ease-in-out;
+}
+
+.terms-container input[type="checkbox"]:checked {
+    transform: scale(1.2);
+    animation: checkMark 0.3s ease-in-out;
+}
+
+@keyframes checkMark {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.5); }
+    100% { transform: scale(1.2); }
+}
+
+.custom-select {
+    position: relative;
+    width: 96%;
+font-family: Raleway;
+    
+}
+
+.custom-select i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #4A90E2; /* Icon color */
+    font-size: 18px;
+    z-index: 10;
+}
+
+/* Styled select dropdown */
+.custom-select select {
+    width: 100%;
+    padding: 12px 45px; 
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background: #1c1c1c;
+    color: white;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Custom dropdown arrow */
+.custom-select::after {
+    content: "\25BC"; 
+    font-size: 14px;
+    color: white;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+/* Style dropdown options */
+.custom-select select option {
+    background: #1c1c1c;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+}
+
+/* Hover & focus effects */
+.custom-select select:hover {
+    border-color: #4A90E2;
+}
+
+.custom-select select:focus {
+    border-color: #4A90E2;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+}
+#multiStepForm {
+font-family: Raleway; }
+
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+
+button:hover {
+    transform: scale(1.08);
+    transition: 0.2s ease-in-out;
+}
+/* Footer Styles */
+.footer {
+    background: #222; /* Dark background */
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 16px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+.link a {
+  color: #ff9800; /* Highlight color */
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+.link a:hover {
+    color: #e68900; /* Darker shade on hover */
+}
+	
+
+.footer a {
+    color: #ff9800; /* Highlight color */
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer a:hover {
+    color: #e68900; /* Darker shade on hover */
+}
+
+
+@media (max-width: 768px) {
+  
+  .navbar {
+    padding: 5px 10px;
+  }
+  .navbar .nav-links li {
+    margin: 0 8px;
+  }
+  .navbar a {
+    font-size: 12px;
+  }
+  
+  
+  .container {
+    width: 100%;
+    max-width: 100%;
+    margin: 80px auto 0; 
+    padding: 15px;
+    min-height: calc(100vh - 80px); 
+    box-sizing: border-box;
+  }
+  
+  
+  .title, h2, p {
+    font-size: 14px;
+  }
+  
+  
+  input[type="text"],
+  input[type="date"],
+  input[type="email"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 8px 10px 8px 40px; 
+    margin: 5px 0 10px 0;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+  
+  
+  button {
+    width: 100%;
+    padding: 6px 8px;
+    font-size: 14px;
+  }
+  
+ 
+  .progress-bar .step {
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    font-size: 10px;
+  }
+}
+
+
+
+</style>
+</head>
+<body> 
+
+  <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">Workshop Registration</div>
+        <ul class="nav-links">
+            <li><a href="https://jvo-james.github.io/skillforg-website/startup">Home</a></li>
+            <li><a href="https://jvo-james.github.io/skillforg-website/about.html">About</a></li>
+            <li><a href="https://jvo-james.github.io/skillforg-website/contact.html">Contact</a></li>
+            <li><a href="https://jvo-james.github.io/skillforg-website/gallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+
+<div class="container">
+ <div class="title">Register for the Workshop</div>
+
+        <!-- Progress Bar -->
+        <div class="progress-bar">
+            <div class="step active">1</div>
+            <div class="step">2</div>
+            <div class="step">3</div>
+        </div>
+
+<form id="multiStepForm" action="https://formsubmit.co/jadelstech@gmail.com" method="POST">
+      <input type="hidden" name="_next" value="https://jvo-james.github.io/workshop-registration/confirm.html">
+    <input type="hidden" name="_captcha" value="false">
+        <!-- Step 1: Personal Information -->
+        <div class="form-step active">
+            <h2>Personal Information</h2>
+<hr><br>
+           <!-- Full Name -->            <label>Full Name:</label>
+
+<div class="input-group">
+    <i class="fa fa-user"></i>
+    <input type="text"name="first_name" id="firstName" placeholder="First Name" required>
+</div>
+
+<div class="input-group">
+    <i class="fa fa-user"></i>
+    <input type="text"name="middle_name" id="middleName" placeholder="Middle Name (Optional)">
+</div>
+
+<div class="input-group">
+    <i class="fa fa-user"></i>
+    <input type="text"name="last_name" id="lastName" placeholder="Last Name" required>
+</div>
+
+<!-- Date of Birth -->    <label>Date of Birth:</label>
+
+<div class="input-group">
+    <i class="fa fa-calendar"></i>
+    <input type="date"name="dob" id="dob" required>
+</div>
+
+<!-- Gender -->            <label>Gender:</label>
+
+<div class="custom-select">
+    <i class="fa fa-venus-mars"></i>
+    <select name="gender" id="gender" required>
+        <option value="" disabled selected>--Select your gender--</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+    </select>
+</div>
+<br>
+<!-- Nationality -->            <label>Nationality:</label>
+
+<div class="input-group">
+    <i class="fa fa-globe"></i>
+    <input type="text" name="nationality" id="nationality" placeholder="eg. Ghanaian, Nigerian, etc." required>
+</div>
+
+<!-- Email -->            <label>Personal Email Address:</label>
+
+<div class="input-group">
+    <i class="fa fa-envelope"></i>
+    <input type="email" name="personal_email" id="email" placeholder="example@domain.com" required>
+</div>
+
+<!-- Phone Number -->            <label>Personal Phone Number:</label>
+
+<div class="input-group">
+    <i class="fa fa-phone"></i>
+    <input type="text"name="phone" id="phone" placeholder="Enter a valid 10-15 digit phone number" required>
+</div>
+
+<!-- Residential Address --><label>Residential Address:</label>
+
+<div class="input-group">
+    <i class="fa fa-map-marker-alt"></i>
+    <input type="text" name="location" id="location" placeholder="Hostel Name or Off-Campus Location" required>
+</div>
+
+<!-- Social Media Links -->            <label>Social Media Links (Optional):</label>
+
+<div class="input-group">
+    <i class="fa fa-link"></i>
+    <input type="text" name="social_media" placeholder="Enter your social media link (Optional)">
+</div>
+
+
+
+           
+            <div class="btn-container">
+                <button type="button" class="next">Next</button>
+            </div>
+        </div>
+
+        <!-- Step 2: Academic Details -->
+        <div class="form-step">
+<h2>Academic Details</h2>
+
+<!-- Student ID -->            <label>Student ID:</label>
+
+<div class="input-group">
+    <i class="fa fa-id-badge"></i>
+    <input type="text" id="student_id" name="student_id" placeholder="eg. 21342803" required>
+</div>
+
+<!-- Academic Department -->            <label>Academic Department:</label>
+<div class="custom-select">
+    <i class="fa fa-building"></i>
+    <select name="department" id="department" required>
+        <option value="" disabled selected>--Select your Department--</option>
+        <option value="College of Agriculture and Natural Resources">College of Agriculture and Natural Resources</option>
+        <option value="College of Art and Built Environment">College of Art and Built Environment</option>
+        <option value="College of Humanities and Social Sciences">College of Humanities and Social Sciences</option>
+        <option value="College of Engineering">College of Engineering</option>
+        <option value="College of Health Sciences">College of Health Sciences</option>
+        <option value="College of Science">College of Science</option>
+    </select>
+</div>
+<br>
+<!-- Field of Study -->            <label>Field of Study:</label>
+
+<div class="input-group">
+    <i class="fa fa-book"></i>
+    <input type="text" id="field_of_study" name="field_of_study" placeholder="eg. Computer Science, Chemical Engineering, etc." required>
+</div>
+
+<!-- Current Level -->            <label>Current Level:</label>
+
+<div class="custom-select">
+    <i class="fa fa-graduation-cap"></i>
+    <select id="level" name="current_level" required>
+        <option value="" disabled selected>--Select your Current Level--</option>
+        <option value="100">100</option>
+        <option value="200">200</option>
+        <option value="300">300</option>
+        <option value="400">400</option>
+        <option value="500">500</option>
+        <option value="600">600</option>
+    </select>
+</div>
+<br>
+<!-- Anticipated Graduation Date -->            <label>Anticipated Graduation Date:</label>
+
+<div class="input-group">
+    <i class="fa fa-calendar-check"></i>
+    <input type="date" name="graduation_date">
+</div>
+
+<!-- CWA -->            <label>CWA</label>
+
+<div class="input-group">
+    <i class="fa fa-chart-line"></i>
+    <input type="text" id="cwa" name="cwa" placeholder="Optional">
+</div>
+
+<div class="btn-container">
+    <button type="button" class="prev">Back</button>
+    <button type="button" class="next">Next</button>
+</div>
+
+                  </div>
+
+        <!-- Step 3: Workshop Selection -->
+        <div class="form-step">
+<h2>Workshop Information</h2>
+
+<!-- Workshop Choice -->            <label class="link">Workshop Choice: <label style="font-size: 20px; color: white;"><a href="https://jvo-james.github.io/skillforg-website/intro.html">Learn More</a></label></label>
+
+<div class="custom-select">
+    <i class="fa fa-tools"></i>
+    <select name="workshop" id="workshop" required>
+        <option value="" disabled selected>--Select a Workshop--</option>
+        <option value="Web Development">Web Development</option>
+        <option value="Graphic Design">Graphic Design</option>
+        <option value="Marketing Strategies">Marketing Strategies</option>
+        <option value="Digital Marketing">Digital Marketing</option>
+        <option value="Photography">Photography</option>
+        <option value="Robotics">Robotics</option>
+        <option value="Data Science">Data Science</option>
+    </select>
+</div>
+<br>
+<!-- Availability -->             <label>Availability for Workshops</label>
+
+<div class="custom-select">
+    <i class="fa fa-calendar-alt"></i>
+    <select name="availability" id="availability" required>
+        <option value="" disabled selected>--Select an Option--</option>
+        <option value="Weekdays">Weekdays</option>
+        <option value="Weekends">Weekends</option>
+    </select>
+</div>
+<br>
+<!-- Workshop Location -->            <label>Workshop Location:</label>
+
+<div class="custom-select">
+    <i class="fa fa-map-marker-alt"></i>
+    <select name="workshop_location" id="location" required>
+        <option value="" disabled selected>--Select--</option>
+        <option value="Online">Online</option>
+        <option value="Onsite">Onsite</option>
+    </select>
+</div>
+<br>
+<!-- Terms and Conditions -->
+<div class="terms-container">
+    <input type="checkbox" name="terms" id="termsCheckbox" required>
+    <label for="termsCheckbox" class="link">
+        By registering, you agree to our<a href="https://jvo-james.github.io/skillforg-website/terms.html" target="_blank">Terms & Conditions.</a>
+    </label>
+</div>
+<span id="termsError" style="color: red; display: none;">You must agree before submitting.</span>
+
+<br>
+<div class="btn-container">
+    <button type="button" class="prev">Back</button>
+    <button type="submit">Submit</button>
+</div>
+</div>
+
+    </form>
+</div>
+
+   <!-- Footer Section -->
+<footer class="footer">
+    <p>&copy; 2025 SkillForge. All Rights Reserved.</p>
+    <p>
+        <a href="https://jvo-james.github.io/skillforg-website/privacy.html">Privacy Policy</a> | 
+        <a href="https://jvo-james.github.io/skillforg-website/terms.html">Terms of Use</a>   
+       
+    </p>
+</footer>
+
+
+
+<script>
+
+	document.addEventListener("DOMContentLoaded", function () {
+    // Initialize EmailJS
+    emailjs.init("mRkmngSQa0dzBfRS8"); // Replace with your EmailJS Public Key
+
+    const steps = document.querySelectorAll(".form-step");
+    const progressSteps = document.querySelectorAll(".progress-bar .step");
+    const nextButtons = document.querySelectorAll(".next");
+    const prevButtons = document.querySelectorAll(".prev");
+    const form = document.getElementById("multiStepForm");
+    const termsCheckbox = document.getElementById("termsCheckbox");
+    const dobInput = document.getElementById("dob");
+
+    let currentStep = 0;
+
+    // Function to update progress bar
+    function updateProgress() {
+        progressSteps.forEach((step, index) => {
+            step.classList.toggle("active", index <= currentStep);
+        });
+    }
+
+    // Function to validate required fields
+    function validateStep(stepIndex) {
+        const inputs = steps[stepIndex].querySelectorAll("input[required], select[required]");
+        let isValid = true;
+        let errorMessages = [];
+
+        inputs.forEach(input => {
+            const value = input.value.trim();
+            const id = input.id;
+
+            if (!value) {
+                showError(input, `❌ ${id.replace("_", " ")} is required.`);
+                errorMessages.push(`${id.replace("_", " ")} is required.`);
+                isValid = false;
+            } 
+            else if (["firstName", "middleName", "lastName"].includes(id) && !/^[A-Za-z\s]+$/.test(value)) {
+                showError(input, `❌ ${id.replace("_", " ")} must contain only letters.`);
+                errorMessages.push(`${id.replace("_", " ")} must contain only letters.`);
+                isValid = false;
+            } 
+            else if (id === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+                showError(input, "❌ Please enter a valid email address.");
+                errorMessages.push("Invalid email format.");
+                isValid = false;
+            } 
+            else if (id === "phone" && !/^\d{10,15}$/.test(value)) {
+                showError(input, "❌ Phone number must be 10-15 digits.");
+                errorMessages.push("Phone number must be 10-15 digits.");
+                isValid = false;
+            } 
+            else if (id === "student_id" && !/^\d+$/.test(value)) {
+                showError(input, "❌ Student ID must contain only numbers.");
+                errorMessages.push("Student ID must contain only numbers.");
+                isValid = false;
+            } 
+            else if (id === "field_of_study" && !/^[A-Za-z\s]+$/.test(value)) {
+                showError(input, "❌ Field of Study must contain only letters.");
+                errorMessages.push("Field of Study must contain only letters.");
+                isValid = false;
+            } 
+            else if (id === "cwa" && value !== "" && (!/^\d+(\.\d{1,2})?$/.test(value) || value < 0 || value > 100)) {
+                showError(input, "❌ CWA must be a number between 0 and 100.");
+                errorMessages.push("CWA must be between 0 and 100.");
+                isValid = false;
+            }
+            else if (id === "dob") {
+                const dobValue = new Date(value);
+                const today = new Date();
+                if (dobValue > today) {
+                    showError(input, "❌ Enter a valid Date of Birth.");
+                    errorMessages.push("Date of Birth cannot be in the future.");
+                    isValid = false;
+                } else {
+                    removeError(input);
+                }
+            }  
+            else {
+                removeError(input);
+            }
+        });
+
+        return { isValid, errorMessages };
+    }
+
+    // Show Error Message
+    function showError(input, message) {
+        input.classList.add("error");
+        input.nextElementSibling && input.nextElementSibling.classList.contains("error-message")
+            ? (input.nextElementSibling.textContent = message)
+            : createErrorMessage(input, message);
+    }
+
+    // Remove Error Message
+    function removeError(input) {
+        input.classList.remove("error");
+        if (input.nextElementSibling && input.nextElementSibling.classList.contains("error-message")) {
+            input.nextElementSibling.remove();
+        }
+    }
+
+    // Create Error Message Below Input
+    function createErrorMessage(input, message) {
+        const errorMsg = document.createElement("div");
+        errorMsg.classList.add("error-message");
+        errorMsg.style.color = "red";
+        errorMsg.style.fontSize = "14px";
+        errorMsg.style.marginTop = "5px";
+        errorMsg.textContent = message;
+        input.parentNode.appendChild(errorMsg);
+    }
+
+    // Next Button Event
+    nextButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const { isValid, errorMessages } = validateStep(currentStep);
+
+            if (!isValid) {
+                alert("⚠️ Please fix the following errors before proceeding:\n\n" + errorMessages.join("\n"));
+                return;
+            }
+
+            steps[currentStep].classList.remove("active");
+            currentStep++;
+            steps[currentStep].classList.add("active");
+        });
+    });
+
+    // Previous Button Event
+    prevButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            steps[currentStep].classList.remove("active");
+            currentStep--;
+            steps[currentStep].classList.add("active");
+        });
+    });
+
+    // Live Validation (Removes Error Messages on Typing)
+    document.querySelectorAll("input, select").forEach(input => {
+        input.addEventListener("input", () => {
+            removeError(input);
+        });
+    });
+
+    // Form Submission Handling
+    form.addEventListener("submit", function (event) {
+        event.preventDefault(); // Stop default form submission
+
+        const { isValid, errorMessages } = validateStep(currentStep);
+
+        if (!isValid) {
+            alert("❌ Please fix the errors before submitting:\n\n" + errorMessages.join("\n"));
+            return;
+        }
+
+        if (!termsCheckbox.checked) {
+            alert("❌ You must agree to the Terms & Conditions before submitting.");
+            return;
+        }
+
+        // Collect user details
+        let userName = document.getElementById("firstName").value + " " + document.getElementById("lastName").value;
+        let userEmail = document.getElementById("email").value;
+
+        // Send email via EmailJS
+        emailjs.send("service_cd8p711", "template_eg12xwg", {
+            user_name: userName,
+            user_email: userEmail
+        }, "mRkmngSQa0dzBfRS8")
+        .then(() => {
+            // Once email is sent, submit form to FormSubmit
+            form.submit();
+        })
+        .catch((error) => {
+            console.error("❌ EmailJS Error:", error);
+            alert("❌ Error sending confirmation email. Please try again.");
+        });
+    });
+
+    // Update Progress Bar & Auto-scroll on Refresh
+    updateProgress();
+});
+
+
+</script>
+
+</body>
+</html>
