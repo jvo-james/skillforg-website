@@ -17,7 +17,7 @@ font-family: 'Poppins', sans-serif;
     background-size: cover;
     background-position: center;
     font-size: 25px;
-    color: white; /* Make all text white */
+    color: white; 
     font-family: 'Raleway', sans-serif;
 
 }
@@ -25,7 +25,7 @@ font-family: 'Poppins', sans-serif;
 
 
 
-/* Navigation Bar */
+
 .navbar {
 display: flex;
    position: fixed;
@@ -67,10 +67,10 @@ display: flex;
 
 .container {
     position: relative;
-    z-index: 1; /* Puts content above the overlay */
-    border: 2px solid white; /* Keeps the border only */
+    z-index: 1; 
+    border: 2px solid white;
   background: rgba(255, 255, 255, 0.1);    max-width: 50%;
-    margin:150px auto 50px; /* Keeps it centered but allows scrolling */
+    margin:150px auto 50px; 
     padding: 50px;
     color: white;
 backdrop-filter: blur(10px);
@@ -88,7 +88,7 @@ animation: fadeIn 1.2s ease-in-out;
         transform: translateY(0);
     }
 }
-/* Title */
+
 .title {
     font-size: 26px;
     font-weight: bold;
@@ -96,7 +96,7 @@ animation: fadeIn 1.2s ease-in-out;
     color: #ff9800;
 }
 
-/* Progress Bar */
+
 .progress-bar {
     display: flex;
     justify-content: space-between;
@@ -227,13 +227,13 @@ button:active {
     cursor: pointer;
 	font-family: Raleway;
 }
-/* 🌟 Input Group Styling */
+
 .input-group {
     position: relative;
     margin-bottom: 15px;
 }
 
-/* 🌟 Icons Styling */
+
 .input-group i {
     position: absolute;
     left: 12px;
@@ -244,7 +244,7 @@ button:active {
 	
 }
 
-/* 🌟 Input Fields */
+
 input[type=text]{
     width: 85%;
 height: 30px;
@@ -279,7 +279,7 @@ height: 30px;
 font-family: Raleway;
 }
 
-/* 🌟 Focus Effect */
+
 .input-group input:focus {
    padding-left: 50px;
     border: 2px solid #ddd;
@@ -309,7 +309,6 @@ font-family: Raleway;
     padding: 10px 50px; 
 }
 
-/* Input Field Glow */
 input, textarea {
     transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
@@ -358,12 +357,12 @@ font-family: Raleway;
     left: 12px;
     top: 50%;
     transform: translateY(-50%);
-    color: #4A90E2; /* Icon color */
+    color: #4A90E2; 
     font-size: 18px;
     z-index: 10;
 }
 
-/* Styled select dropdown */
+
 .custom-select select {
     width: 100%;
     padding: 12px 45px; 
@@ -380,7 +379,7 @@ font-family: Raleway;
     position: relative;
 }
 
-/* Custom dropdown arrow */
+
 .custom-select::after {
     content: "\25BC"; 
     font-size: 14px;
@@ -392,7 +391,7 @@ font-family: Raleway;
     pointer-events: none;
 }
 
-/* Style dropdown options */
+
 .custom-select select option {
     background: #1c1c1c;
     color: white;
@@ -400,7 +399,7 @@ font-family: Raleway;
     padding: 10px;
 }
 
-/* Hover & focus effects */
+
 .custom-select select:hover {
     border-color: #4A90E2;
 }
@@ -421,9 +420,9 @@ button:hover {
     transform: scale(1.08);
     transition: 0.2s ease-in-out;
 }
-/* Footer Styles */
+
 .footer {
-    background: #222; /* Dark background */
+    background: #222; 
     color: white;
     text-align: center;
     padding: 15px 0;
@@ -433,26 +432,26 @@ button:hover {
     width: 100%;
 }
 .link a {
-  color: #ff9800; /* Highlight color */
+  color: #ff9800; 
     text-decoration: none;
     margin: 0 10px;
     transition: color 0.3s ease-in-out;
 }
 
 .link a:hover {
-    color: #e68900; /* Darker shade on hover */
+    color: #e68900; 
 }
 	
 
 .footer a {
-    color: #ff9800; /* Highlight color */
+    color: #ff9800;
     text-decoration: none;
     margin: 0 10px;
     transition: color 0.3s ease-in-out;
 }
 
 .footer a:hover {
-    color: #e68900; /* Darker shade on hover */
+    color: #e68900; 
 }
 
 
@@ -518,7 +517,7 @@ button:hover {
 </head>
 <body> 
 
-  <!-- Navigation Bar -->
+  
     <nav class="navbar">
         <div class="logo">Workshop Registration</div>
         <ul class="nav-links">
@@ -532,7 +531,7 @@ button:hover {
 <div class="container">
  <div class="title">Register for the Workshop</div>
 
-        <!-- Progress Bar -->
+       
         <div class="progress-bar">
             <div class="step active">1</div>
             <div class="step">2</div>
@@ -540,13 +539,14 @@ button:hover {
         </div>
 
 <form id="multiStepForm" action="https://formsubmit.co/jadelstech@gmail.com" method="POST">
-      <input type="hidden" name="_next" value="https://jvo-james.github.io/workshop-registration/confirm.html">
+      <input type="hidden" name="_next" value="https://jvo-james.github.io/skillforg-website/confirm.html">
     <input type="hidden" name="_captcha" value="false">
-        <!-- Step 1: Personal Information -->
+      
         <div class="form-step active">
             <h2>Personal Information</h2>
 <hr><br>
-           <!-- Full Name -->            <label>Full Name:</label>
+          
+		<label>Full Name:</label>
 
 <div class="input-group">
     <i class="fa fa-user"></i>
@@ -563,14 +563,16 @@ button:hover {
     <input type="text"name="last_name" id="lastName" placeholder="Last Name" required>
 </div>
 
-<!-- Date of Birth -->    <label>Date of Birth:</label>
+
+		<label>Date of Birth:</label>
 
 <div class="input-group">
     <i class="fa fa-calendar"></i>
     <input type="date"name="dob" id="dob" required>
 </div>
 
-<!-- Gender -->            <label>Gender:</label>
+
+		<label>Gender:</label>
 
 <div class="custom-select">
     <i class="fa fa-venus-mars"></i>
@@ -581,35 +583,39 @@ button:hover {
     </select>
 </div>
 <br>
-<!-- Nationality -->            <label>Nationality:</label>
+
+		<label>Nationality:</label>
 
 <div class="input-group">
     <i class="fa fa-globe"></i>
     <input type="text" name="nationality" id="nationality" placeholder="eg. Ghanaian, Nigerian, etc." required>
 </div>
 
-<!-- Email -->            <label>Personal Email Address:</label>
+
+		<label>Personal Email Address:</label>
 
 <div class="input-group">
     <i class="fa fa-envelope"></i>
     <input type="email" name="personal_email" id="email" placeholder="example@domain.com" required>
 </div>
 
-<!-- Phone Number -->            <label>Personal Phone Number:</label>
+
+		<label>Personal Phone Number:</label>
 
 <div class="input-group">
     <i class="fa fa-phone"></i>
     <input type="text"name="phone" id="phone" placeholder="Enter a valid 10-15 digit phone number" required>
 </div>
 
-<!-- Residential Address --><label>Residential Address:</label>
+<label>Residential Address:</label>
 
 <div class="input-group">
     <i class="fa fa-map-marker-alt"></i>
     <input type="text" name="location" id="location" placeholder="Hostel Name or Off-Campus Location" required>
 </div>
 
-<!-- Social Media Links -->            <label>Social Media Links (Optional):</label>
+
+		<label>Social Media Links (Optional):</label>
 
 <div class="input-group">
     <i class="fa fa-link"></i>
@@ -624,18 +630,20 @@ button:hover {
             </div>
         </div>
 
-        <!-- Step 2: Academic Details -->
+       
         <div class="form-step">
 <h2>Academic Details</h2>
 
-<!-- Student ID -->            <label>Student ID:</label>
+
+		<label>Student ID:</label>
 
 <div class="input-group">
     <i class="fa fa-id-badge"></i>
     <input type="text" id="student_id" name="student_id" placeholder="eg. 21342803" required>
 </div>
 
-<!-- Academic Department -->            <label>Academic Department:</label>
+
+		<label>Academic Department:</label>
 <div class="custom-select">
     <i class="fa fa-building"></i>
     <select name="department" id="department" required>
@@ -649,14 +657,16 @@ button:hover {
     </select>
 </div>
 <br>
-<!-- Field of Study -->            <label>Field of Study:</label>
+
+		<label>Field of Study:</label>
 
 <div class="input-group">
     <i class="fa fa-book"></i>
     <input type="text" id="field_of_study" name="field_of_study" placeholder="eg. Computer Science, Chemical Engineering, etc." required>
 </div>
 
-<!-- Current Level -->            <label>Current Level:</label>
+
+		<label>Current Level:</label>
 
 <div class="custom-select">
     <i class="fa fa-graduation-cap"></i>
@@ -671,14 +681,15 @@ button:hover {
     </select>
 </div>
 <br>
-<!-- Anticipated Graduation Date -->            <label>Anticipated Graduation Date:</label>
+
+		<label>Anticipated Graduation Date:</label>
 
 <div class="input-group">
     <i class="fa fa-calendar-check"></i>
     <input type="date" name="graduation_date">
 </div>
 
-<!-- CWA -->            <label>CWA</label>
+          <label>CWA</label>
 
 <div class="input-group">
     <i class="fa fa-chart-line"></i>
@@ -692,11 +703,11 @@ button:hover {
 
                   </div>
 
-        <!-- Step 3: Workshop Selection -->
+        
         <div class="form-step">
 <h2>Workshop Information</h2>
 
-<!-- Workshop Choice -->            <label class="link">Workshop Choice: <label style="font-size: 20px; color: white;"><a href="https://jvo-james.github.io/skillforg-website/intro.html">Learn More</a></label></label>
+          <label class="link">Workshop Choice: <label style="font-size: 20px; color: white;"><a href="https://jvo-james.github.io/skillforg-website/intro.html">Learn More</a></label></label>
 
 <div class="custom-select">
     <i class="fa fa-tools"></i>
@@ -712,7 +723,7 @@ button:hover {
     </select>
 </div>
 <br>
-<!-- Availability -->             <label>Availability for Workshops</label>
+            <label>Availability for Workshops</label>
 
 <div class="custom-select">
     <i class="fa fa-calendar-alt"></i>
@@ -723,7 +734,7 @@ button:hover {
     </select>
 </div>
 <br>
-<!-- Workshop Location -->            <label>Workshop Location:</label>
+           <label>Workshop Location:</label>
 
 <div class="custom-select">
     <i class="fa fa-map-marker-alt"></i>
@@ -734,7 +745,7 @@ button:hover {
     </select>
 </div>
 <br>
-<!-- Terms and Conditions -->
+
 <div class="terms-container">
     <input type="checkbox" name="terms" id="termsCheckbox" required>
     <label for="termsCheckbox" class="link">
@@ -753,7 +764,7 @@ button:hover {
     </form>
 </div>
 
-   <!-- Footer Section -->
+  
 <footer class="footer">
     <p>&copy; 2025 SkillForge. All Rights Reserved.</p>
     <p>
@@ -768,8 +779,8 @@ button:hover {
 <script>
 
 	document.addEventListener("DOMContentLoaded", function () {
-    // Initialize EmailJS
-    emailjs.init("mRkmngSQa0dzBfRS8"); // Replace with your EmailJS Public Key
+   
+    emailjs.init("mRkmngSQa0dzBfRS8"); 
 
     const steps = document.querySelectorAll(".form-step");
     const progressSteps = document.querySelectorAll(".progress-bar .step");
@@ -781,14 +792,14 @@ button:hover {
 
     let currentStep = 0;
 
-    // Function to update progress bar
+   
     function updateProgress() {
         progressSteps.forEach((step, index) => {
             step.classList.toggle("active", index <= currentStep);
         });
     }
 
-    // Function to validate required fields
+   
     function validateStep(stepIndex) {
         const inputs = steps[stepIndex].querySelectorAll("input[required], select[required]");
         let isValid = true;
@@ -852,7 +863,7 @@ button:hover {
         return { isValid, errorMessages };
     }
 
-    // Show Error Message
+    
     function showError(input, message) {
         input.classList.add("error");
         input.nextElementSibling && input.nextElementSibling.classList.contains("error-message")
@@ -860,7 +871,7 @@ button:hover {
             : createErrorMessage(input, message);
     }
 
-    // Remove Error Message
+   
     function removeError(input) {
         input.classList.remove("error");
         if (input.nextElementSibling && input.nextElementSibling.classList.contains("error-message")) {
@@ -868,7 +879,7 @@ button:hover {
         }
     }
 
-    // Create Error Message Below Input
+   
     function createErrorMessage(input, message) {
         const errorMsg = document.createElement("div");
         errorMsg.classList.add("error-message");
@@ -879,7 +890,7 @@ button:hover {
         input.parentNode.appendChild(errorMsg);
     }
 
-    // Next Button Event
+    
     nextButtons.forEach(button => {
         button.addEventListener("click", () => {
             const { isValid, errorMessages } = validateStep(currentStep);
@@ -895,7 +906,7 @@ button:hover {
         });
     });
 
-    // Previous Button Event
+   
     prevButtons.forEach(button => {
         button.addEventListener("click", () => {
             steps[currentStep].classList.remove("active");
@@ -904,14 +915,14 @@ button:hover {
         });
     });
 
-    // Live Validation (Removes Error Messages on Typing)
+   
     document.querySelectorAll("input, select").forEach(input => {
         input.addEventListener("input", () => {
             removeError(input);
         });
     });
 
-    // Form Submission Handling
+   
     form.addEventListener("submit", function (event) {
         event.preventDefault(); // Stop default form submission
 
@@ -927,17 +938,17 @@ button:hover {
             return;
         }
 
-        // Collect user details
+        
         let userName = document.getElementById("firstName").value + " " + document.getElementById("lastName").value;
         let userEmail = document.getElementById("email").value;
 
-        // Send email via EmailJS
+        
         emailjs.send("service_cd8p711", "template_eg12xwg", {
             user_name: userName,
             user_email: userEmail
         }, "mRkmngSQa0dzBfRS8")
         .then(() => {
-            // Once email is sent, submit form to FormSubmit
+           
             form.submit();
         })
         .catch((error) => {
@@ -946,7 +957,7 @@ button:hover {
         });
     });
 
-    // Update Progress Bar & Auto-scroll on Refresh
+   
     updateProgress();
 });
 
